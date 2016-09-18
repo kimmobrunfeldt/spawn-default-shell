@@ -1,0 +1,38 @@
+{
+  "name": "spawn-default-shell",
+  "version": "1.0.0",
+  "description": "Spawn shell command with platform default shell",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimmobrunfeldt/spawn-default-shell.git"
+  },
+  "keywords": [
+    "shell",
+    "exec",
+    "bash",
+    "sh",
+    "command",
+    "cross-platform",
+    "windows",
+    "linux",
+    "mac"
+  ],
+  "author": "Kimmo Brunfeldt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimmobrunfeldt/spawn-default-shell/issues"
+  },
+  "homepage": "https://github.com/kimmobrunfeldt/spawn-default-shell#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb-base": "^7.1.0",
+    "eslint-plugin-import": "^1.15.0",
+    "mocha": "^3.0.2",
+    "releasor": "^1.2.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ./src ./test"
+  }
+}
