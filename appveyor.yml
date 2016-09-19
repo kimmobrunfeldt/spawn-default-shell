@@ -5,6 +5,8 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - set CI=true
+  - set SHELL=cmd.exe
+  - set SHELL_EXECUTION_FLAG=/c
   - npm -g install npm@latest
   - set PATH=%APPDATA%\npm;%PATH%
   - npm install
