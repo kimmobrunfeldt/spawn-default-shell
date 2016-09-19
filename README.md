@@ -6,8 +6,9 @@
 
 [![NPM Badge](https://nodei.co/npm/spawn-default-shell.png?downloads=true)](https://www.npmjs.com/package/spawn-default-shell)
 
-Like `child_process.spawn` but with shell benefits. You can just pass the command
-as a string, and it will be executed in the platform default shell.
+Like `child_process.spawn` with `shell: true` option but a bit more
+convenient and customizable. You can just pass the command as a string, 
+and it will be executed in the platform default shell.
 
 ```js
 // If we are in Linux / Mac, this will work
