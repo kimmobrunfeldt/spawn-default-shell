@@ -1,19 +1,26 @@
-const assert = require('assert');
-const defaultShell = require('../src/index');
+const _ = require('lodash');
+const testBasic = require('./test-basic');
+const testPlatformShared = require('./test-platform-shared');
+
+const PLATFORMS = ['darwin', 'freebsd', 'linux', 'sunos', 'win32'];
+const originalPlatform = Object.getOwnPropertyDescriptor(process, 'platform');
 
 describe('spawn-default-shell', () => {
-  it('piping should work', (done) => {
-    const child = defaultShell.spawn('cat test/data/test.txt | grep 1', {
-      stdio: 'pipe',
-    });
+  testBasic();
+});
 
-    child.stdout.on('data', (data) => {
-      assert.strictEqual(data.toString('utf8'), '1 äö☃\n');
-    });
+describe('shared tests on each platform (mocking)', () => {
+  _.each(PLATFORMS, (platform) => {
+    describe(`process.platform = "${platform}"`, () => {
+      before(() => {
+        Object.defineProperty(process, 'platform', { value: platform });
+      });
 
-    child.on('close', (code) => {
-      assert.strictEqual(code, 0);
-      done();
+      after(() => {
+        Object.defineProperty(process, 'platform', originalPlatform);
+      });
+
+      testPlatformShared();
     });
   });
 });

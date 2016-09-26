@@ -12,5 +12,5 @@ function spawn(command, spawnOpts) {
 }
 
 module.exports = {
-  spawn: spawn
+  spawn: spawn,
 };
