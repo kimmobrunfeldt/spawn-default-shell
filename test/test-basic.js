@@ -22,7 +22,7 @@ function testBasic() {
   });
 
   it('&& operator should work', (done) => {
-    const child = defaultShell.spawn('echo 1 && return 42');
+    const child = defaultShell.spawn('echo 1 && node -e "process.exit(42)"');
 
     child.on('close', (code) => {
       assert.strictEqual(code, 42);
