@@ -33,7 +33,8 @@
     "releasor": "^1.2.1"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "npm run test-debug-print && mocha",
+    "test-debug-print": "node -e \"var a = require('./src/get-shell')(); console.log('> getShell()\\n' + JSON.stringify(a, null, 2));\"",
     "lint": "eslint ./src ./test"
   }
 }
