@@ -8,7 +8,7 @@
 
 Like `child_process.spawn` with `shell: true` option but a bit more
 convenient and customizable. You can just pass the command as a string,
-and it will be executed in the platform default shell.
+and it will be executed in the platform default shell. Used in [concurrently](https://github.com/kimmobrunfeldt/concurrently).
 
 ```js
 // If we are in Linux / Mac, this will work
