@@ -12,6 +12,4 @@ build: off
 test_script:
   - node --version
   - npm --version
-  - set SHELL=cmd.exe
-  - set SHELL_EXECUTE_FLAG=/c
   - npm test
