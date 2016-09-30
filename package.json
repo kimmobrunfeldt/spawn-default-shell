@@ -1,6 +1,6 @@
 {
   "name": "spawn-default-shell",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Spawn shell command with platform default shell",
   "main": "src/index.js",
   "repository": {
