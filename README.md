@@ -2,12 +2,12 @@
 
 > Spawn shell command with platform default shell
 
-[![Build Status](https://travis-ci.org/kimmobrunfeldt/spawn-default-shell.svg?branch=master)](https://travis-ci.org/kimmobrunfeldt/spawn-default-shell)
+[![Build Status](https://travis-ci.org/kimmobrunfeldt/spawn-default-shell.svg?branch=master)](https://travis-ci.org/kimmobrunfeldt/spawn-default-shell) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/kimmobrunfeldt/spawn-default-shell?branch=master&svg=true)](https://ci.appveyor.com/project/kimmobrunfeldt/spawn-default-shell) *master branch status*
 
 [![NPM Badge](https://nodei.co/npm/spawn-default-shell.png?downloads=true)](https://www.npmjs.com/package/spawn-default-shell)
 
 Like `child_process.spawn` with `shell: true` option but a bit more
-convenient and customizable. You can just pass the command as a string, 
+convenient and customizable. You can just pass the command as a string,
 and it will be executed in the platform default shell.
 
 ```js
