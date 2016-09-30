@@ -28,11 +28,13 @@
     "eslint": "^3.5.0",
     "eslint-config-airbnb-base": "^7.1.0",
     "eslint-plugin-import": "^1.15.0",
+    "lodash": "^4.16.2",
     "mocha": "^3.0.2",
     "releasor": "^1.2.1"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "npm run test-debug-print && mocha",
+    "test-debug-print": "node -e \"var a = require('./src/get-shell')(); console.log('> getShell()\\n' + JSON.stringify(a, null, 2));\"",
     "lint": "eslint ./src ./test"
   }
 }
