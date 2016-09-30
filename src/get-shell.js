@@ -26,7 +26,7 @@ function detectExecuteFlag(shell) {
     return '-c';
   }
 
-  throw new Error('Unable to detect platform shell type.');
+  throw new Error('Unable to detect platform shell type. Please set SHELL_EXECUTE_FLAG env variable.');
 }
 
 function getShell() {
