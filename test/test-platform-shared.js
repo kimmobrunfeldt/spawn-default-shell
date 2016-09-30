@@ -1,7 +1,7 @@
 const assert = require('assert');
 const defaultShell = require('../src/index');
 const getShell = require('../src/get-shell');
-const { withEnv } = require('./utils');
+const withEnv = require('./utils').withEnv;
 
 function sharedTests() {
   it('custom /bin/zsh shell should work', () => {
