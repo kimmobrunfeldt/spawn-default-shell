@@ -25,9 +25,7 @@ Linux    | `/bin/sh -l -c "..."`
 You can always override the shell path by defining these two environment variables:
 
 * `SHELL=/bin/zsh`
-* `SHELL_EXECUTE_FLAGS=-l -c`
-
-    **Warning: execute flag must be the last flag.**
+* `SHELL_EXECUTE_FLAGS=-l -c` **Warning: execute flag must be the last flag.**
 
 All `sh` variants will be called with `-l` flag (--login). It invokes the shell
 as a non-interactive login shell. In bash it means:
