@@ -7,7 +7,7 @@ function sharedTests() {
   it('custom /bin/zsh shell should work', () => {
     withEnv({ SHELL: '/bin/zsh' }, () => {
       assert.strictEqual(getShell().shell, '/bin/zsh');
-      assert.strictEqual(getShell().executeFlags, '-c');
+      assert.strictEqual(getShell().executeFlags, '-l -c');
     });
   });
 

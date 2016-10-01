@@ -42,12 +42,12 @@ function testBasic() {
     it('shell resolution order should be 1. SHELL 2. /bin/bash', () => {
       withEnv({ SHELL: '' }, () => {
         assert.strictEqual(getShell().shell, '/bin/bash');
-        assert.strictEqual(getShell().executeFlags, '-c');
+        assert.strictEqual(getShell().executeFlags, '-l -c');
       });
 
       withEnv({ SHELL: 'zsh' }, () => {
         assert.strictEqual(getShell().shell, 'zsh');
-        assert.strictEqual(getShell().executeFlags, '-c');
+        assert.strictEqual(getShell().executeFlags, '-l -c');
       });
     });
   });
@@ -74,7 +74,7 @@ function testBasic() {
 
       withEnv({ SHELL: 'bash', COMSPEC: '\\C:\\cmd.exe' }, () => {
         assert.strictEqual(getShell().shell, 'bash');
-        assert.strictEqual(getShell().executeFlags, '-c');
+        assert.strictEqual(getShell().executeFlags, '-l -c');
       });
     });
   });
@@ -91,12 +91,12 @@ function testBasic() {
     it('shell resolution order should be 1. SHELL 2. /bin/sh', () => {
       withEnv({ SHELL: '' }, () => {
         assert.strictEqual(getShell().shell, '/bin/sh');
-        assert.strictEqual(getShell().executeFlags, '-c');
+        assert.strictEqual(getShell().executeFlags, '-l -c');
       });
 
       withEnv({ SHELL: 'zsh' }, () => {
         assert.strictEqual(getShell().shell, 'zsh');
-        assert.strictEqual(getShell().executeFlags, '-c');
+        assert.strictEqual(getShell().executeFlags, '-l -c');
       });
     });
   });
