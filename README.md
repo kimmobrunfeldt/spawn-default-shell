@@ -16,7 +16,7 @@ const defaultShell = require('spawn-default-shell');
 const child = defaultShell.spawn('cat src/index.js | grep function');
 ```
 
-Platform | Command
+Platform | Default command spawned
 ---------|----------
 Windows  | `cmd.exe /c "..."`. If `COMSPEC` env variable is defined, it is used as shell path.
 Mac      | `/bin/bash -l -c "..."`
