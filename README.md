@@ -19,13 +19,29 @@ const child = defaultShell.spawn('cat src/index.js | grep function');
 Platform | Command
 ---------|----------
 Windows  | `cmd.exe /c "..."`. If `COMSPEC` env variable is defined, it is used as shell path.
-Mac      | `/bin/bash -c "..."`
-Linux    | `/bin/sh -c "..."`
+Mac      | `/bin/bash -l -c "..."`
+Linux    | `/bin/sh -l -c "..."`
 
 You can always override the shell path by defining these two environment variables:
 
 * `SHELL=/bin/zsh`
-* `SHELL_EXECUTE_FLAG=-c`
+* `SHELL_EXECUTE_FLAGS=-l -c`
+
+    **Warning: execute flag must be the last flag.**
+
+All `sh` variants will be called with `-l` flag (--login). It invokes the shell
+as a non-interactive login shell. In bash it means:
+
+> When bash is invoked as an interactive login shell, or as a non-inter-
+> active shell with the --login option, it first reads and executes commands
+> from the file /etc/profile, if that file exists. After reading
+> that file, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile,
+> in that order, and reads and executes commands from the first one that
+> exists and is readable. The --noprofile option may be used when the
+> shell is started to inhibit this behavior.
+>
+> When  a  login  shell  exits, bash reads and executes commands from the
+> file ~/.bash_logout, if it exists.
 
 ## Install
 

@@ -4,9 +4,10 @@ const getShell = require('./get-shell');
 function spawn(command, spawnOpts) {
   const shellDetails = getShell();
 
+  const args = shellDetails.executeFlags.split(' ');
   return childProcess.spawn(
     shellDetails.shell,
-    [shellDetails.executeFlag, command],
+    args.concat([command]),
     spawnOpts
   );
 }

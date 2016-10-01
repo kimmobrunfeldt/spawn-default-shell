@@ -7,20 +7,20 @@ function sharedTests() {
   it('custom /bin/zsh shell should work', () => {
     withEnv({ SHELL: '/bin/zsh' }, () => {
       assert.strictEqual(getShell().shell, '/bin/zsh');
-      assert.strictEqual(getShell().executeFlag, '-c');
+      assert.strictEqual(getShell().executeFlags, '-c');
     });
   });
 
   it('custom execute flag should override default', () => {
-    withEnv({ SHELL_EXECUTE_FLAG: '--execute' }, () => {
-      assert.strictEqual(getShell().executeFlag, '--execute');
+    withEnv({ SHELL_EXECUTE_FLAGS: '--execute' }, () => {
+      assert.strictEqual(getShell().executeFlags, '--execute');
     });
   });
 
   it('customizing whole command should work', () => {
-    withEnv({ SHELL: '/bin/verycustomshell', SHELL_EXECUTE_FLAG: '-x' }, () => {
+    withEnv({ SHELL: '/bin/verycustomshell', SHELL_EXECUTE_FLAGS: '-x' }, () => {
       assert.strictEqual(getShell().shell, '/bin/verycustomshell');
-      assert.strictEqual(getShell().executeFlag, '-x');
+      assert.strictEqual(getShell().executeFlags, '-x');
     });
   });
 

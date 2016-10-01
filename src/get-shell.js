@@ -15,18 +15,18 @@ function detectPlatformShell() {
   return process.env.SHELL || '/bin/sh';
 }
 
-function detectExecuteFlag(shell) {
-  if (process.env.SHELL_EXECUTE_FLAG) {
-    return process.env.SHELL_EXECUTE_FLAG;
+function detectExecuteFlags(shell) {
+  if (process.env.SHELL_EXECUTE_FLAGS) {
+    return process.env.SHELL_EXECUTE_FLAGS;
   }
 
   if (shell.match(DETECT_CMD_REGEX)) {
     return '/c';
   } else if (shell.match(DETECT_SH_REGEX)) {
-    return '-c';
+    return '-l -c';
   }
 
-  throw new Error('Unable to detect platform shell type. Please set SHELL_EXECUTE_FLAG env variable.');
+  throw new Error('Unable to detect platform shell type. Please set SHELL_EXECUTE_FLAGS env variable.');
 }
 
 function getShell() {
@@ -34,7 +34,7 @@ function getShell() {
 
   return {
     shell: shell,
-    executeFlag: detectExecuteFlag(shell),
+    executeFlags: detectExecuteFlags(shell),
   };
 }
 
